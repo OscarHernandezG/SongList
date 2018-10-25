@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SongList</string>
+    <string name="songEditTitle">title</string>
+    <string name="songEditBand">Band</string>
+    <string name="songEditYear">Year</string>
+    <string name="saveButton">Save</string>
+    <string name="newSong">New Song</string>
+</resources>
