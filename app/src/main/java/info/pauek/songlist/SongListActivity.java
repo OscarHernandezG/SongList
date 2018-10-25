@@ -16,19 +16,21 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongListActivity extends AppCompatActivity {
+public class SongListActivity extends AppCompatActivity
+{
 
     private List<Song> songs;
     private RecyclerView song_list_view;
     private Adapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_list);
 
         songs = new ArrayList<>();
-        songs.add(new Song("...And Justice For All"));
+        songs.add(new Song("...And Justice For All", "Metallica", "1988"));
 
         adapter = new Adapter();
 
@@ -58,12 +60,17 @@ public class SongListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView title_view;
+    class ViewHolder extends RecyclerView.ViewHolder
+    {
+        private TextView titleView;
+        private TextView bandView;
+        private TextView yearView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title_view = itemView.findViewById(R.id.title_view);
+            titleView = itemView.findViewById(R.id.title_view);
+            bandView = itemView.findViewById(R.id.band_view);
+            yearView = itemView.findViewById(R.id.year_view);
         }
     }
 
@@ -76,8 +83,11 @@ public class SongListActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
-            holder.title_view.setText(songs.get(i).getTitle());
+        public void onBindViewHolder(@NonNull ViewHolder holder, int i)
+        {
+            holder.titleView.setText(songs.get(i).getTitle());
+            holder.bandView.setText(songs.get(i).getBand());
+            holder.yearView.setText(songs.get(i).getYear());
         }
 
         @Override
