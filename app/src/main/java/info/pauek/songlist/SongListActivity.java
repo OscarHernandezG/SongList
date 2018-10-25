@@ -51,6 +51,8 @@ public class SongListActivity extends AppCompatActivity {
         {
             case R.id.newSong:
                 Toast.makeText(this, "New song menu button clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, SongEditActivity.class);
+                startActivityForResult(intent, 0);
                 break;
         }
         return super.onOptionsItemSelected(item);

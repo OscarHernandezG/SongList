@@ -5,4 +5,7 @@
     <string name="songEditYear">Year</string>
     <string name="saveButton">Save</string>
     <string name="newSong">New Song</string>
+    <string name="songTitleText">Song title</string>
+    <string name="songBandText">Band name</string>
+    <string name="songYearText">Song year</string>
 </resources>
